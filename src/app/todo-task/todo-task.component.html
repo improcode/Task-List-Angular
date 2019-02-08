@@ -1,0 +1,11 @@
+Do zrobienia:
+<ng-container *ngIf="tasksList.length > 0; else noTasks">
+  <ul class="list-group">
+    <li appDatehover [date]="task.created" class="list-group-item" *ngFor="let task of tasksList | sortName">
+      {{task.name | transformTask: '!'}}
+      <button type="button" class="btn btn-danger" (click)="remove(task)">Usuń</button>
+      <button type="button" class="btn btn-success" (click)="done(task)">Zrobione</button>
+    </li>
+  </ul>
+</ng-container>
+<ng-template #noTasks><div>Brak zadań</div></ng-template>

@@ -1,0 +1,5 @@
+<div>Zadania wykonane (łącznie: {{tasksDone.length}})<br>
+  <ul class="list-group">
+    <li appChecked appDatehover [date]="task.end" *ngFor="let task of tasksDone">{{task.name | transformTask: ' - super!'}}</li>
+  </ul>
+</div>
